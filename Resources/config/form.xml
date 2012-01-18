@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="vespolina.creditcard.form.name">vespolina_creditcard</parameter>
+        <parameter key="vespolina.creditcard.form.type.class">Vespolina\CommonBundle\Form\Type\CreditCardFormType</parameter>
+        <parameter key="vespolina.creditcard.form.model.data_class.class">Vespolina\CommonBundle\Document\CreditCardProfile</parameter>
+    </parameters>
+    <services>
+        <service id="vespolina.creditcard.form.type" class="%vespolina.creditcard.form.type.class%">
+            <tag name="form.type" alias="%vespolina.creditcard.form.name%" />
+            <argument key="data_class">%vespolina.creditcard.form.model.data_class.class%</argument>
+            <argument key="name">%vespolina.creditcard.form.name%</argument>
+        </service>
+    </services>
+</container>

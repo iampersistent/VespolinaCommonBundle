@@ -8,23 +8,16 @@
 namespace Vespolina\CommonBundle\Model;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-
-/** @ODM\EmbeddedDocument */
+/**
+ * @author Richard Shank <develop@zestic.com>
+ */
 abstract class CreditCardProfile
 {
-    /** @ODM\EmbedOne(targetDocument="Vespolina\CommonBundle\Document\Address") */
-    protected $address;
-
-    /** @ODM\String */
-    protected $persistedCardNumber;
-
     protected $activeCardNumber;
-
-    /** @ODM\Hash */
-    protected $expiration;
-
-    /** @ODM\String */
+    protected $address;
     protected $cardType;
+    protected $expiration;
+    protected $persistedCardNumber;
 
     public function setAddress($address)
     {
