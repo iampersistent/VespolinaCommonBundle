@@ -38,7 +38,9 @@ abstract class CreditCardProfile
 
     public function setCardNumber($cardNumber)
     {
-
+        $this->activeCardNumber = preg_replace('/\D/', '', $cardNumber);
+        $chars = strlen($this->activeCardNumber);
+        $this->persistedCardNumber = str_repeat('*', $chars - 4) . substr($this->activeCardNumber, -4);
     }
 
     public function getCardNumber($type = null)
@@ -68,5 +70,4 @@ abstract class CreditCardProfile
     {
         return $this->expiration;
     }
-
 }
