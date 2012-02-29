@@ -1,0 +1,22 @@
+{
+    "name": "vespolina/common-bundle",
+    "type": "symfony-bundle",
+    "description": "Vespolina Common bundle. Common code used in various Vespolina bundles.",
+    "keywords": ["shop", "ecommerce"],
+    "homepage": "http://vespolina-project.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vespolina Team",
+            "homepage": "https://github.com/vespolina/VespolinaCommonBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "Vespolina\\CommonBundle": "" }
+    },
+    "target-dir": "Vespolina/CommonBundle"
+}
+
